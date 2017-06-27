@@ -61,11 +61,11 @@ class Layouts extends Brick
     public function apply()
     {
         if ($this->config->hasKey(self::REGISTER)) {
-            $this->register_layout( $this->config->getSubConfig(self::REGISTER)->getArrayCopy());
+            $this->register($this->config->getSubConfig(self::REGISTER)->getArrayCopy());
         }
 
-        if ( $this->config->hasKey(self::UNREGISTER)) {
-            $this->unregister_layout($this->config->getSubConfig(self::UNREGISTER)->getArrayCopy());
+        if ($this->config->hasKey(self::UNREGISTER)) {
+            $this->unregister($this->config->getSubConfig(self::UNREGISTER)->getArrayCopy());
         }
     }
 
@@ -74,9 +74,9 @@ class Layouts extends Brick
      *
      * @param array $args Keys and their values.
      */
-    protected function register_layout(array $args)
+    protected function register(array $args)
     {
-        array_walk($args, function(array $value, string $key) {
+        array_walk($args, function (array $value, string $key) {
             \genesis_register_layout($key, $value);
         });
     }
@@ -86,8 +86,9 @@ class Layouts extends Brick
      *
      * @param array $args Keys.
      */
-    protected function unregister_layout( array $args ) {
-        array_walk($args, function(string $value) {
+    protected function unregister(array $args)
+    {
+        array_walk($args, function (string $value) {
             \genesis_unregister_layout($value);
         });
     }

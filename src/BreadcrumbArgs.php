@@ -66,7 +66,7 @@ class BreadcrumbArgs extends Brick
      */
     public function apply()
     {
-        add_filter( 'genesis_breadcrumb_args', [$this, 'breadcrumb_args']);
+        add_filter('genesis_breadcrumb_args', [$this, 'breadcrumbArgs']);
     }
 
     /**
@@ -75,7 +75,7 @@ class BreadcrumbArgs extends Brick
      * @param array $args Existing breadcrumb args.
      * @return mixed Amended breadcrumb args.
      */
-    public function breadcrumb_args(array $args)
+    public function breadcrumbArgs(array $args)
     {
         return array_replace_recursive($args, $this->config->getArrayCopy());
     }

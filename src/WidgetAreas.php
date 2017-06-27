@@ -47,15 +47,15 @@ use Gamajo\ThemeToolkit\WidgetAreas as ThemeToolkitWidgetAreas;
  */
 class WidgetAreas extends ThemeToolkitWidgetAreas
 {
-	const HEADER_RIGHT = 'header-right';
-	const SIDEBAR      = 'sidebar';
-	const SIDEBAR_ALT  = 'sidebar-alt';
+    const HEADER_RIGHT = 'header-right';
+    const SIDEBAR      = 'sidebar';
+    const SIDEBAR_ALT  = 'sidebar-alt';
     /**
      * Register widget areas.
      */
     public function register(array $widget_areas)
     {
-        array_walk($widget_areas, function($widget_area) {
+        array_walk($widget_areas, function ($widget_area) {
             \genesis_register_widget_area($widget_area);
         });
     }
