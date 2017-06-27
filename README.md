@@ -1,0 +1,102 @@
+# Genesis Theme Toolkit
+
+Building blocks to develop a config-based Genesis Framework child theme for WordPress.
+
+When building a theme, wouldn't it be nice to separate out the implementation-specific config, from the reusable logic? This is the premise upon which the [Using a Config to Write Reusable Code](https://www.alainschlesser.com/config-files-for-reusable-code/) series articles are written, and which this package enables.
+
+Specifically, this packages builds upon the [Theme Toolkit](https://github.com/gamajo/theme-toolkit) package, and adds _bricks_ that are specific to Genesis child theme development. It provides an easy way to:
+
+- Filtering the default Genesis breadcrumb arguments.
+- Registering and unregistering Genesis layouts.
+- Unregistering templates inherited from Genesis (extends Theme Toolkit functionality)
+- Filters Genesis theme settings defaults, or forces them to specific values.
+- Register and unregister widget areas, added by Genesis (extends Theme Toolkit functionality)
+
+## Installation
+
+In a terminal, browse to the directory with your theme in and then:
+
+~~~sh
+composer require gamajo/genesis-theme-toolkit
+~~~
+
+You can then autoload (PSR-4) or require the files as needed.
+
+## Usage
+
+See the [example-config.php](docs/example-config.php). This would typically live in your theme, at `config/defaults.php`.
+
+Your theme would then contain a function, in the `functions.php`, to pull in this config, and load up the individual components, which are referred to as _bricks_:
+
+```php
+// functions.php
+
+namespace Gamajo\ExampleTheme;
+
+use BrightNucleus\Config\ConfigFactory;
+use Gamajo\GenesisThemeToolkit\BreadcrumbArgs;
+use Gamajo\GenesisThemeToolkit\Layouts;
+use Gamajo\GenesisThemeToolkit\Templates;
+use Gamajo\GenesisThemeToolkit\ThemeSettings;
+use Gamajo\GenesisThemeToolkit\WidgetAreas;
+use Gamajo\ThemeToolkit\GoogleFonts;
+use Gamajo\ThemeToolkit\ImageSizes;
+use Gamajo\ThemeToolkit\Templates;
+use Gamajo\ThemeToolkit\ThemeSupport;
+use Gamajo\ThemeToolkit\Widgets;
+use Gamajo\ThemeToolkit\WidgetAreas;
+
+add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
+/**
+ * Theme setup.
+ *
+ * Compose the theme toolkit bricks.
+ */
+function setup() {
+	$config_file = __DIR__ . '/config/defaults.php';
+	$config = ConfigFactory::createSubConfig( $config_file, 'Gamajo\ExampleTheme' );
+
+	// These bricks are run in admin and front-end.
+	$bricks = [
+		ImageSizes::class,
+		Templates::class,
+		ThemeSupport::class,
+		Widgets::class,
+		Layouts::class,
+		ThemeSettings::class,
+		WidgetAreas::class,
+	];
+
+	// Apply logic in bricks, with configuration defined in config/defaults.php.
+	array_walk( $bricks, ThemeToolkit::class . '::apply', $config );
+
+
+	if ( ! is_admin() ) {
+		// Only front-end bricks.
+		$bricks = [
+			BreadcrumbArgs::class,
+			GoogleFonts::class,
+		];
+
+		array_walk( $bricks, ThemeToolkit::class . '::apply', $config );
+
+	}
+}
+```
+
+The `'Gamajo\ExampleTheme'` string matches the two keys in the `return` at the bottom of the config file. Change this in the config and the function to be your company name and theme name.
+
+You don't have to use all of the bricks in this package; pick and choose.
+
+You can add your own bricks to your theme (in your `src/` or similar directory), and then make use of them in the function above.
+
+If you're not using the Genesis Framework, see the [Theme Toolkit](https://github.com/gamajo/theme-toolkit) which has just the bricks applicable for building themes in general.
+
+## Change Log
+
+Please see [CHANGELOG.md](CHANGELOG.md).
+
+## Credits
+
+Built by [Gary Jones](https://twitter.com/GaryJ)  
+Copyright 2017 [Gamajo](https://gamajo.com)
