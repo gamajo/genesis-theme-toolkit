@@ -7,6 +7,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 _Nothing yet._
 
+## 0.3.0 - 2017-06-28
+### Changed
+- Updated requirements to use ThemeToolkit 0.4.0
+
 ## 0.2.0 - 2017-06-28
 ### Fixed
 - Inconsistent method naming.
