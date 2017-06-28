@@ -27,7 +27,7 @@
     },
     "require": {
         "php": "^7.0",
-        "gamajo/theme-toolkit": "^0.3",
+        "gamajo/theme-toolkit": "^0.4",
         "roave/security-advisories": "dev-master"
     },
     "require-dev": {
