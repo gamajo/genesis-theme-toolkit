@@ -34,7 +34,7 @@ namespace Gamajo\GenesisThemeToolkit;
  */
 class GenesisThemeToolkit
 {
-    const BREADCRUMBARGS = 'GoogleFonts';
+    const BREADCRUMBARGS = 'BreadcrumbArgs';
     const LAYOUTS = 'Layouts';
     const TEMPLATES = 'Templates';
     const THEMESETTINGS = 'ThemeSettings';
