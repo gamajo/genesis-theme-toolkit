@@ -7,6 +7,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 _Nothing yet._
 
+## 0.3.1 - 2017-06-29
+### Added
+- Add FooterCreds brick.
+
 ## 0.3.0 - 2017-06-28
 ### Changed
 - Updated requirements to use ThemeToolkit 0.4.0
