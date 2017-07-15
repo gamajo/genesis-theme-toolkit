@@ -15,6 +15,7 @@ namespace Gamajo\GenesisThemeToolkit;
 use BrightNucleus\Config\ConfigInterface;
 use BrightNucleus\Config\ConfigTrait;
 use BrightNucleus\Config\Exception\FailedToProcessConfigException;
+use Gamajo\ThemeToolkit\Brick;
 
 /**
  * Sets the footer credits content.
@@ -45,7 +46,7 @@ use BrightNucleus\Config\Exception\FailedToProcessConfigException;
  *
  * @package Gamajo\GenesisThemeToolkit
  */
-class FooterCreds
+class FooterCreds extends Brick
 {
     const CREDS = 'creds';
 
