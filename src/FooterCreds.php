@@ -12,9 +12,6 @@ declare(strict_types=1);
 
 namespace Gamajo\GenesisThemeToolkit;
 
-use BrightNucleus\Config\ConfigInterface;
-use BrightNucleus\Config\ConfigTrait;
-use BrightNucleus\Config\Exception\FailedToProcessConfigException;
 use Gamajo\ThemeToolkit\Brick;
 
 /**
@@ -49,20 +46,6 @@ use Gamajo\ThemeToolkit\Brick;
 class FooterCreds extends Brick
 {
     const CREDS = 'creds';
-
-    use ConfigTrait;
-
-    /**
-     * Initialise FooterCreds object.
-     *
-     * @param ConfigInterface $config Config to parametrize the object.
-     *
-     * @throws FailedToProcessConfigException  If the Config could not be parsed correctly.
-     */
-    public function __construct(ConfigInterface $config)
-    {
-        $this->processConfig($config);
-    }
 
     /**
      * Apply filters and hooks.
