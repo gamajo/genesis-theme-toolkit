@@ -1,6 +1,6 @@
 <?php
 /**
- * Utility Pro.
+ * Class to manage Genesis theme settings.
  *
  * @package   Gamajo\GenesisThemeTookit
  * @author    Gary Jones
