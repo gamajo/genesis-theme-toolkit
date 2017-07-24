@@ -7,6 +7,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 _Nothing yet._
 
+## [0.4.0] - 2017-07-24
+### Added
+- Docs: Add links to comparisons to change log.
+- Docs: Add FooterCreds to example code.
+
+### Changed
+- Updated requirements to use ThemeToolkit 0.5.0.
+
 ## [0.3.1] - 2017-06-29
 ### Added
 - Add FooterCreds brick.
@@ -26,6 +34,7 @@ _Nothing yet._
 * Initial release.
 
 [Unreleased]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.2.0...HEAD
+[0.4.0]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.3.1...0.4.0
 [0.3.1]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.1.0...0.2.0
