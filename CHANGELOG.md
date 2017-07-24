@@ -7,15 +7,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 _Nothing yet._
 
-## 0.3.1 - 2017-06-29
+## [0.3.1] - 2017-06-29
 ### Added
 - Add FooterCreds brick.
 
-## 0.3.0 - 2017-06-28
+## [0.3.0] - 2017-06-28
 ### Changed
-- Updated requirements to use ThemeToolkit 0.4.0
+- Updated requirements to use ThemeToolkit 0.4.0.
 
-## 0.2.0 - 2017-06-28
+## [0.2.0] - 2017-06-28
 ### Fixed
 - Inconsistent method naming.
 - Whitespace per PSR-2 coding standards.
@@ -26,5 +26,7 @@ _Nothing yet._
 * Initial release.
 
 [Unreleased]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.2.0...HEAD
+[0.3.1]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.3.0...0.3.1
+[0.3.0]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.1.0...0.2.0
 
