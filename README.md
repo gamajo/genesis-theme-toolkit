@@ -11,6 +11,7 @@ Specifically, this packages builds upon the [Theme Toolkit](https://github.com/g
 - Unregistering templates inherited from Genesis (extends Theme Toolkit functionality)
 - Filters Genesis theme settings defaults, or forces them to specific values.
 - Register and unregister widget areas, added by Genesis (extends Theme Toolkit functionality)
+- Customise the footer credits string.
 
 ## Installation
 
@@ -35,6 +36,7 @@ namespace Gamajo\ExampleTheme;
 
 use BrightNucleus\Config\ConfigFactory;
 use Gamajo\GenesisThemeToolkit\BreadcrumbArgs;
+use Gamajo\GenesisThemeToolkit\FooterCreds;
 use Gamajo\GenesisThemeToolkit\Layouts;
 use Gamajo\GenesisThemeToolkit\Templates;
 use Gamajo\GenesisThemeToolkit\ThemeSettings;
@@ -74,6 +76,7 @@ function setup() {
 	if ( ! is_admin() ) {
 		// Only front-end bricks.
 		$bricks = [
+			FooterCreds::class,
 			BreadcrumbArgs::class,
 			GoogleFonts::class,
 		];
