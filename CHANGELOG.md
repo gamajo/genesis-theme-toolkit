@@ -13,6 +13,7 @@ _Nothing yet._
 
 ### Changed
 - **Bump minimum PHP to 7.1**
+- - Updated requirements to use ThemeToolkit 0.6.0.
 
 ## [0.4.0] - 2017-07-24
 ### Added
