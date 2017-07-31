@@ -61,11 +61,13 @@ class Layouts extends Brick
     public function apply()
     {
         if ($this->config->hasKey(self::REGISTER)) {
-            $this->register($this->config->getSubConfig(self::REGISTER)->getArrayCopy());
+            $registerConfig = $this->config->getSubConfig(self::REGISTER);
+            $this->register($registerConfig->getArrayCopy());
         }
 
         if ($this->config->hasKey(self::UNREGISTER)) {
-            $this->unregister($this->config->getSubConfig(self::UNREGISTER)->getArrayCopy());
+            $unregisterConfig = $this->config->getSubConfig(self::UNREGISTER);
+            $this->unregister($unregisterConfig->getArrayCopy());
         }
     }
 

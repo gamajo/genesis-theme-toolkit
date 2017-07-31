@@ -116,7 +116,8 @@ class ThemeSettings extends Brick
      */
     public function themeSettingsDefaults($defaults): array
     {
-        foreach ($this->config->getSubConfig(self::DEFAULTS)->getArrayCopy() as $key => $value) {
+        $defaultsConfig = $this->config->getSubConfig(self::DEFAULTS);
+        foreach ($defaultsConfig->getArrayCopy() as $key => $value) {
             $defaults[ $key ] = $value;
         }
 
@@ -128,7 +129,8 @@ class ThemeSettings extends Brick
      */
     public function forceValues()
     {
-        foreach ($this->config->getSubConfig(self::FORCE)->getArrayCopy() as $key => $value) {
+        $forceConfig = $this->config->getSubConfig(self::FORCE);
+        foreach ($forceConfig->getArrayCopy() as $key => $value) {
             add_filter("genesis_pre_get_option_{$key}", function () use ($value) {
                 return $value;
             });

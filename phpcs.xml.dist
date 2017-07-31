@@ -9,4 +9,5 @@
 	<arg name="report" value="summary"/>
 	<arg name="report" value="source"/>
 	<rule ref="PSR2"/>
+	<rule ref="ObjectCalisthenics"/>
 </ruleset>

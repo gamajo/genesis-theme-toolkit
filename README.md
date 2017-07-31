@@ -15,6 +15,8 @@ Specifically, this packages builds upon the [Theme Toolkit](https://github.com/g
 
 ## Installation
 
+Requires PHP 7.1.
+
 In a terminal, browse to the directory with your theme in and then:
 
 ~~~sh
