@@ -101,11 +101,15 @@ class ThemeSettings extends Brick
      */
     public function apply()
     {
-        // Change the theme settings defaults.
-        add_filter('genesis_theme_settings_defaults', [ $this, 'themeSettingsDefaults' ]);
+        if ($this->config->hasKey(self::DEFAULTS)) {
+            // Change the theme settings defaults.
+            add_filter('genesis_theme_settings_defaults', [$this, 'themeSettingsDefaults']);
+        }
 
-        // Force specific values to be returned.
-        $this->forceValues();
+        if ($this->config->hasKey(self::FORCE)) {
+            // Force specific values to be returned.
+            $this->forceValues();
+        }
     }
 
     /**
@@ -118,7 +122,7 @@ class ThemeSettings extends Brick
     {
         $defaultsConfig = $this->config->getSubConfig(self::DEFAULTS);
         foreach ($defaultsConfig->getArrayCopy() as $key => $value) {
-            $defaults[ $key ] = $value;
+            $defaults[$key] = $value;
         }
 
         return $defaults;
