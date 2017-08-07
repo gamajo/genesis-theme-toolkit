@@ -7,13 +7,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 _Nothing yet._
 
+## [0.6.0] - 2017-08-07
+### Added
+- Added `Layouts::DEFAULTLAYOUT` as the correct way to set a default layout.
+
+### Fixed
+- Fixed ThemeSettings throwing fatal error when keys were not set.
+
 ## [0.5.0] - 2017-07-31
 ### Added
 - Add ObjectCalisthenics checks.
 
 ### Changed
 - **Bump minimum PHP to 7.1**
-- - Updated requirements to use ThemeToolkit 0.6.0.
+- Updated requirements to use ThemeToolkit 0.6.0.
 
 ## [0.4.0] - 2017-07-24
 ### Added
@@ -41,7 +48,8 @@ _Nothing yet._
 
 * Initial release.
 
-[Unreleased]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.5.0...HEAD
+[Unreleased]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.6.0...HEAD
+[0.6.0]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.3.1...0.4.0
 [0.3.1]: https://github.com/gamajo/genesis-theme-toolkit/compare/0.3.0...0.3.1
