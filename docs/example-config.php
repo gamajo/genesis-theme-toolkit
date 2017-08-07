@@ -94,7 +94,7 @@ $gamajo_genesis_theme_settings = [
 		ThemeSettings::SEMANTIC_HEADINGS => 0,
 	],
 	ThemeSettings::DEFAULTS => [
-		ThemeSettings::SITE_LAYOUT => 'full-width-content',
+		ThemeSettings::BLOG_TITLE => 'image',
 	],
 ];
 
@@ -104,6 +104,7 @@ $gamajo_genesis_layouts = [
 		Layouts::SIDEBAR_CONTENT_SIDEBAR,
 		Layouts::SIDEBAR_SIDEBAR_CONTENT,
 	],
+	Layouts::DEFAULTLAYOUT => __genesis_return_full_width_content()
 ];
 
 $gamajo_widgets = [
