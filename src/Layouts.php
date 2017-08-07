@@ -26,6 +26,7 @@ use Gamajo\ThemeToolkit\Brick;
  *         Layouts::SIDEBAR_CONTENT_SIDEBAR,
  *         Layouts::SIDEBAR_SIDEBAR_CONTENT,
  *     ],
+ *     Layouts::DEFAULTLAYOUT => __genesis_return_full_width_content()
  * ];
  * ```
  *
@@ -47,6 +48,7 @@ class Layouts extends Brick
 {
     const REGISTER   = 'register';
     const UNREGISTER = 'unregister';
+    const DEFAULTLAYOUT = 'default-layout';
 
     const FULL_WIDTH_CONTENT = 'full-width-content';
     const CONTENT_SIDEBAR = 'content-sidebar';
@@ -68,6 +70,10 @@ class Layouts extends Brick
         if ($this->config->hasKey(self::UNREGISTER)) {
             $unregisterConfig = $this->config->getSubConfig(self::UNREGISTER);
             $this->unregister($unregisterConfig->getArrayCopy());
+        }
+
+        if ($this->config->hasKey(self::DEFAULTLAYOUT)) {
+            $this->setDefault($this->config->getKey(self::DEFAULTLAYOUT));
         }
     }
 
@@ -93,5 +99,17 @@ class Layouts extends Brick
         array_walk($args, function (string $value) {
             \genesis_unregister_layout($value);
         });
+    }
+
+    /**
+     * Set a default Genesis layout.
+     *
+     * Allow a user to identify a layout as being the default layout on a new install, as well as serve as the fallback layout.
+     *
+     * @param string $layout Layout handle.
+     */
+    protected function setDefault(string $layout)
+    {
+        \genesis_set_default_layout($layout);
     }
 }
