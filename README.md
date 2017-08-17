@@ -13,15 +13,27 @@ Specifically, this packages builds upon the [Theme Toolkit](https://github.com/g
 - Register and unregister widget areas, added by Genesis (extends Theme Toolkit functionality)
 - Customise the footer credits string.
 
+## Why?
+
+The ThemeToolkit and GenesisThemeToolkit packages are for theme customisations - what theme support to add, what CSS/JS dependencies to add in, how many footer widgets to allow, what layouts to add/remove, what image sizes there should be - all stuff that would historically gone into `functions.php` or some other include file.
+
+When that is all set in `functions.php` though, the important values are often lost in a mixture of logic (what to do with those values), and boilerplate (opening and closing functions, hooking in to filters etc.), and that can make it harder for end theme authors to seek out and configure those important values to their liking.
+
+By following a sort of _separation of concerns_ principle, we use a config file to keep the important values all in one place (easy to tell people where and how to edit), and then keep the rest of the logic and boilerplate away from those who are less confident with PHP. They get a single place to make amendments, and you don't have to maintain the default logic.
+
+Any theme can use the ThemeToolkit, and Genesis child theme can use this GenesisThemeToolkit.
+
+For premium themes, you would set the toolkit(s) as a composer dependency, to pull it in locally for development, and then just be sure to include `vendor/gamajo/...` within your distributable theme zip.
+
 ## Installation
 
 Requires PHP 7.1.
 
 In a terminal, browse to the directory with your theme in and then:
 
-~~~sh
+```sh
 composer require gamajo/genesis-theme-toolkit
-~~~
+```
 
 You can then autoload (PSR-4) or require the files as needed.
 
