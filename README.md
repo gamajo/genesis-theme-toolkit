@@ -61,6 +61,7 @@ use Gamajo\ThemeToolkit\Templates;
 use Gamajo\ThemeToolkit\ThemeSupport;
 use Gamajo\ThemeToolkit\Widgets;
 use Gamajo\ThemeToolkit\WidgetAreas;
+use Gamajo\ThemeToolkit\ThemeToolkit;
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 /**
