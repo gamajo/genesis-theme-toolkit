@@ -57,10 +57,9 @@ use Gamajo\GenesisThemeToolkit\ThemeSettings;
 use Gamajo\GenesisThemeToolkit\WidgetAreas;
 use Gamajo\ThemeToolkit\GoogleFonts;
 use Gamajo\ThemeToolkit\ImageSizes;
-use Gamajo\ThemeToolkit\Templates;
 use Gamajo\ThemeToolkit\ThemeSupport;
+use Gamajo\ThemeToolkit\ThemeToolkit;
 use Gamajo\ThemeToolkit\Widgets;
-use Gamajo\ThemeToolkit\WidgetAreas;
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 /**
