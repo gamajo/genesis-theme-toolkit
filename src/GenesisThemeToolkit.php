@@ -35,6 +35,7 @@ namespace Gamajo\GenesisThemeToolkit;
 class GenesisThemeToolkit
 {
     const BREADCRUMBARGS = 'BreadcrumbArgs';
+    const CUSTOMLOGO = 'CustomLogo';
     const FOOTERCREDS = 'FooterCreds';
     const LAYOUTS = 'Layouts';
     const TEMPLATES = 'Templates';

@@ -12,6 +12,7 @@ Specifically, this packages builds upon the [Theme Toolkit](https://github.com/g
 - Filters Genesis theme settings defaults, or forces them to specific values.
 - Register and unregister widget areas, added by Genesis (extends Theme Toolkit functionality)
 - Customise the footer credits string.
+- Implement a custom inline logo using WordPress `add_theme_support( 'custom-logo' )` functionality.
 
 ## Why?
 
@@ -50,6 +51,7 @@ namespace Gamajo\ExampleTheme;
 
 use BrightNucleus\Config\ConfigFactory;
 use Gamajo\GenesisThemeToolkit\BreadcrumbArgs;
+use Gamajo\GenesisThemeToolkit\CustomLogo;
 use Gamajo\GenesisThemeToolkit\FooterCreds;
 use Gamajo\GenesisThemeToolkit\Layouts;
 use Gamajo\GenesisThemeToolkit\Templates;
@@ -80,6 +82,7 @@ function setup() {
 		Layouts::class,
 		ThemeSettings::class,
 		WidgetAreas::class,
+		CustomLogo::class,
 	];
 
 	// Apply logic in bricks, with configuration defined in config/defaults.php.
