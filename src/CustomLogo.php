@@ -24,7 +24,7 @@ use Gamajo\ThemeToolkit\Brick;
  * Example config:
  *
  * ```
- * $generico_custom_logo = [
+ * $gamajo_custom_logo = [
  *     CustomLogo::HEIGHT           => 600,
  *     CustomLogo::WIDTH            => 160,
  *     CustomLogo::FLEX_HEIGHT      => false,
