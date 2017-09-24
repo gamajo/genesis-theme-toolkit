@@ -13,6 +13,7 @@ declare( strict_types = 1 );
 namespace Gamajo\ExampleTheme;
 
 use Gamajo\GenesisThemeToolkit\BreadcrumbArgs;
+use Gamajo\GenesisThemeToolkit\CustomLogo;
 use Gamajo\GenesisThemeToolkit\Layouts;
 use Gamajo\GenesisThemeToolkit\Templates;
 use Gamajo\GenesisThemeToolkit\ThemeSettings;
@@ -121,6 +122,12 @@ $gamajo_genesis_widget_areas = [
 	],
 ];
 
+$gamajo_genesis_custom_logo = [
+    CustomLogo::WIDTH            => 600,
+    CustomLogo::HEIGHT           => 160,
+    CustomLogo::SITE_DESCRIPTION => false,
+];
+
 return [
 	'Gamajo' => [
 		'ExampleTheme' => [
@@ -133,6 +140,7 @@ return [
 			GenesisThemeToolkit::LAYOUTS        => $gamajo_genesis_layouts,
 			GenesisThemeToolkit::THEMESETTINGS  => $gamajo_genesis_theme_settings,
 			GenesisThemeToolkit::WIDGETAREAS    => $gamajo_genesis_widget_areas,
+			GenesisThemeToolkit::CUSTOMLOGO     => $gamajo_genesis_custom_logo,
 		],
 	],
 ];
